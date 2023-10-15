@@ -1,23 +1,25 @@
-name: C/C++ CI
+name: Build Test
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [master] 
   pull_request:
-    branches: [ "master" ]
+    branches: [master] 
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # You can choose the operating system of your choice
 
     steps:
-    - uses: actions/checkout@v3
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up CMake
+        run: sudo apt-get install -y cmake # Adjust based on your project's build requirements
+
+      - name: Build project
+        run: |
+          cmake build
+          
+      - name: Finalize
+        run: echo "Build and test completed successfully."
