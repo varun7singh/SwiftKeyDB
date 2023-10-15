@@ -2,9 +2,9 @@ name: Build Test
 
 on:
   push:
-    branches: [master] 
+    branches: [master]
   pull_request:
-    branches: [master] 
+    branches: [master]
 
 jobs:
   build:
@@ -19,7 +19,10 @@ jobs:
 
       - name: Build project
         run: |
-          cmake build
-          
+          mkdir build
+          cd build
+          cmake ..
+          make
+
       - name: Finalize
         run: echo "Build and test completed successfully."
