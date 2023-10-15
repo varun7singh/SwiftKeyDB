@@ -1,4 +1,4 @@
-#include "include/List.h"
+#include "../include/List.h"
 
 // add a new element to the list
 void List::insert(string key, string val)

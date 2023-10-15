@@ -1,7 +1,6 @@
-#include "include/DatabaseManager.h"
-#include "include/Database.h"
-#include "include/List.h"
-
+#include "../include/DatabaseManager.h"
+#include "../include/Database.h"
+#include "../include/List.h"
 // add a database to the manager
 Database DatabaseManager::addDatabase(string name)
 {

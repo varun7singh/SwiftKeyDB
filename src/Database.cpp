@@ -1,19 +1,4 @@
-#include "include/Database.h"
-#include "include/List.h"
-
-// get a list from the database
-List Database::getList(string lname)
-{
-    if (db.find(lname) == db.end())
-    {
-        cout << "List does not exist" << endl;
-        return List();
-    }
-    else
-    {
-        return db[lname];
-    }
-}
+#include "../include/Database.h"
 
 // add a new list to the database
 List Database::addList(string lname)
